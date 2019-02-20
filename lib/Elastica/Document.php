@@ -4,7 +4,7 @@ namespace Elastica;
 
 use Elastica\Exception\InvalidException;
 use Elastica\Bulk\Action;
-use Elastica\Filter\Bool;
+use Elastica\Filter\Boolean;
 use Elastica\Exception\NotImplementedException;
 
 /**

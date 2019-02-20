@@ -12,7 +12,7 @@ use Elastica\Exception\InvalidException;
  * @author Nicolas Ruflin <spam@ruflin.com>
  * @link http://www.elasticsearch.org/guide/reference/query-dsl/bool-query.html
  */
-class Bool extends AbstractFilter
+class Boolean extends AbstractFilter
 {
     /**
      * @var float
@@ -44,7 +44,7 @@ class Bool extends AbstractFilter
      * Adds should filter
      *
      * @param  array|\Elastica\Filter\AbstractFilter $args Filter data
-     * @return \Elastica\Filter\Bool           Current object
+     * @return \Elastica\Filter\Boolean           Current object
      */
     public function addShould($args)
     {
@@ -55,7 +55,7 @@ class Bool extends AbstractFilter
      * Adds must filter
      *
      * @param  array|\Elastica\Filter\AbstractFilter $args Filter data
-     * @return \Elastica\Filter\Bool           Current object
+     * @return \Elastica\Filter\Boolean           Current object
      */
     public function addMust($args)
     {
@@ -66,7 +66,7 @@ class Bool extends AbstractFilter
      * Adds mustNot filter
      *
      * @param  array|\Elastica\Filter\AbstractFilter $args Filter data
-     * @return \Elastica\Filter\Bool           Current object
+     * @return \Elastica\Filter\Boolean           Current object
      */
     public function addMustNot($args)
     {
@@ -79,7 +79,7 @@ class Bool extends AbstractFilter
      * @param  string                               $type Filter type
      * @param  array|\Elastica\Filter\AbstractFilter $args Filter data
      * @throws \Elastica\Exception\InvalidException
-     * @return \Elastica\Filter\Bool           Current object
+     * @return \Elastica\Filter\Boolean           Current object
      */
     protected function _addFilter($type, $args)
     {
@@ -106,7 +106,7 @@ class Bool extends AbstractFilter
     }
 
     /**
-     * Converts bool filter to array
+     * Converts boolean filter to array
      *
      * @see \Elastica\Filter\AbstractFilter::toArray()
      * @return array Filter array
@@ -116,15 +116,15 @@ class Bool extends AbstractFilter
         $args = array();
 
         if (!empty($this->_must)) {
-            $args['bool']['must'] = $this->_must;
+            $args['boolean']['must'] = $this->_must;
         }
 
         if (!empty($this->_should)) {
-            $args['bool']['should'] = $this->_should;
+            $args['boolean']['should'] = $this->_should;
         }
 
         if (!empty($this->_mustNot)) {
-            $args['bool']['must_not'] = $this->_mustNot;
+            $args['boolean']['must_not'] = $this->_mustNot;
         }
 
         return $args;
@@ -134,7 +134,7 @@ class Bool extends AbstractFilter
      * Sets the boost value for this filter
      *
      * @param  float                      $boost Boost
-     * @return \Elastica\Filter\Bool Current object
+     * @return \Elastica\Filter\Boolean Current object
      */
     public function setBoost($boost)
     {

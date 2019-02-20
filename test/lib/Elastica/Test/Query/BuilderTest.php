@@ -106,7 +106,7 @@ class BuilderTest extends BaseTest
     public function getQueryTypes()
     {
         return array(
-            array('bool', 'bool'),
+            array('boolean', 'boolean'),
             array('constantScore', 'constant_score'),
             array('disMax', 'dis_max'),
             array('facets', 'facets'),

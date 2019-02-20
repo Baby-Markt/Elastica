@@ -77,7 +77,7 @@ class GeoDistanceRange extends AbstractGeoDistance
                 break;
             case self::RANGE_INCLUDE_LOWER:
             case self::RANGE_INCLUDE_UPPER:
-                $value = (boolean) $value;
+                $value = (bool) $value;
                 break;
             default:
                 throw new InvalidException('Invalid range parameter given: ' . $key);
