@@ -133,7 +133,7 @@ class Builder extends AbstractQuery
      */
     public function bool()
     {
-        return $this->fieldOpen('boolean');
+        return $this->fieldOpen('bool');
     }
 
     /**

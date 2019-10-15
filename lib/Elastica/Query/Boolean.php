@@ -89,4 +89,9 @@ class Boolean extends AbstractQuery
     {
         return $this->setParam('minimum_number_should_match', $minimumNumberShouldMatch);
     }
+
+    protected function _getBaseName()
+    {
+        return 'bool';
+    }
 }
