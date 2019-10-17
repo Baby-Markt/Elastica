@@ -116,15 +116,15 @@ class Boolean extends AbstractFilter
         $args = array();
 
         if (!empty($this->_must)) {
-            $args['boolean']['must'] = $this->_must;
+            $args['bool']['must'] = $this->_must;
         }
 
         if (!empty($this->_should)) {
-            $args['boolean']['should'] = $this->_should;
+            $args['bool']['should'] = $this->_should;
         }
 
         if (!empty($this->_mustNot)) {
-            $args['boolean']['must_not'] = $this->_mustNot;
+            $args['bool']['must_not'] = $this->_mustNot;
         }
 
         return $args;
